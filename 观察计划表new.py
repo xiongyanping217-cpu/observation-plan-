@@ -141,16 +141,16 @@ if page == "📝 观察计划编辑":
         use_container_width=True,
         column_config={
             "序号": st.column_config.NumberColumn("序号", disabled=True, width=50),
-            "幼儿姓名": st.column_config.TextColumn("幼儿姓名", width=100),
-            "计划1_日期": st.column_config.TextColumn("观察计划(TxWx/日期)", width=200),
-            "计划1_类型": st.column_config.SelectboxColumn("观察计划1类型", options=type_options, width=150),
-            "计划1_领域": st.column_config.SelectboxColumn("观察计划1领域", options=domain_options, width=150),
-            "计划2_日期": st.column_config.TextColumn("观察计划2(TxWx/日期)", width=200),
-            "计划2_类型": st.column_config.SelectboxColumn("观察计划2类型", options=type_options, width=150),
-            "计划2_领域": st.column_config.SelectboxColumn("观察计划2领域", options=domain_options, width=150),
-            "计划3_日期": st.column_config.TextColumn("观察计划3(Tx  Wx/日期)", width=200),
-            "计划3_类型": st.column_config.SelectboxColumn("观察计划3类型", options=type_options, width=150),
-            "计划3_领域": st.column_config.SelectboxColumn("观察计划3领域", options=domain_options, width=150),
+            "幼儿姓名": st.column_config.TextColumn("幼儿姓名", width=200),
+            "计划1_日期": st.column_config.TextColumn("观察计划1(TxWx/日期)", width=250),
+            "计划1_类型": st.column_config.SelectboxColumn("计划1类型", options=type_options, width=100),
+            "计划1_领域": st.column_config.SelectboxColumn("计划1领域", options=domain_options, width=100),
+            "计划2_日期": st.column_config.TextColumn("观察计划2(TxWx/日期)", width=250),
+            "计划2_类型": st.column_config.SelectboxColumn("计划2类型", options=type_options, width=100),
+            "计划2_领域": st.column_config.SelectboxColumn("计划2领域", options=domain_options, width=100),
+            "计划3_日期": st.column_config.TextColumn("观察计划3(TxWx/日期)", width=250),
+            "计划3_类型": st.column_config.SelectboxColumn("计划3类型", options=type_options, width=100),
+            "计划3_领域": st.column_config.SelectboxColumn("计划3领域", options=domain_options, width=100),
         },
         key="editor_grid"
     )
@@ -182,15 +182,15 @@ if page == "📝 观察计划编辑":
                     .meta-table td {{ text-align: center; padding: 5px; }}
                     table.data-table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
                     th, td {{ border: 1px solid #999; padding: 8px; text-align: center; font-size: 14px; font-family: "KaiTi", "楷体", serif; }}
-                    th {{ background-color: #d9534f; color: white; }}
+                    th {{ background-color: #d9534f; color: blue; }}
                     
                     /* 右上角图标样式 */
                     .top-right-icon {{
                         position: absolute;
-                        top: 15px;
+                        top: 50px;
                         right: 20px;
-                        width: 50px;
-                        height: auto;
+                        width: 100px;
+                        height: 50px;
                         z-index: 9999;
                     }}
                 </style>
@@ -221,7 +221,7 @@ if page == "📝 观察计划编辑":
         """
     
     st.download_button(
-        label="🖨️ 下载并打印网页版 (HTML)",
+        label="🖨️ 下载并打印",
         data=get_print_html(),
         file_name=f"幼儿观察计划打印版_{year}_{semester}_{class_name}.html",
         mime="text/html",
@@ -229,7 +229,7 @@ if page == "📝 观察计划编辑":
     )
 
 # ----------------- 页面二：打印预览与导出中心 -----------------
-elif page == "🖨️ 打印预览与导出中心":
+elif page == "🖨️ 预览Excel表格":
     st.markdown("### 🖨️ 导出中心")
     st.markdown("请点击下方按钮下载 Excel 观察计划表文件：")
     st.markdown("<br>", unsafe_allow_html=True)
