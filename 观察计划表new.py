@@ -141,7 +141,7 @@ if page == "📝 观察计划编辑":
         use_container_width=True,
         column_config={
             "序号": st.column_config.NumberColumn("序号", disabled=True, width=50),
-            "幼儿姓名": st.column_config.TextColumn("幼儿姓名", width=200),
+            "幼儿姓名": st.column_config.TextColumn("幼儿姓名", width=120),
             "计划1_日期": st.column_config.TextColumn("观察计划1(TxWx/日期)", width=200),
             "计划1_类型": st.column_config.SelectboxColumn("计划1类型", options=type_options, width=100),
             "计划1_领域": st.column_config.SelectboxColumn("计划1领域", options=domain_options, width=100),
@@ -181,7 +181,7 @@ if page == "📝 观察计划编辑":
                     .meta-table {{ width: 100%; margin: 20px 0; font-size: 15px; font-weight: bold; border-collapse: collapse; }}
                     .meta-table td {{ text-align: center; padding: 5px; }}
                     table.data-table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
-                    th, td {{ border: 1px solid #999; padding: 8px; text-align: center; font-size: 14px; font-family: "KaiTi", "楷体", serif; }}
+                    th, td {{ border: 1px solid #999; padding: 8px; text-align: center; font-size: 14px; font-family: "KaiTi", "楷体", serif;white-space: nowrap; }}
                     th {{ background-color: #d9534f; color: blue; }}
                     
                     /* 右上角图标样式 */
